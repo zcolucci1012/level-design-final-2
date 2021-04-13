@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 41802411}
   - component: {fileID: 41802410}
   - component: {fileID: 41802413}
+  - component: {fileID: 41802414}
   m_Layer: 9
   m_Name: Enemy2
   m_TagString: Untagged
@@ -523,6 +524,22 @@ MonoBehaviour:
   projectileSpeed: 50
   walkSpeed: 10
   fireRate: 2
+--- !u!54 &41802414
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41802408}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &46630586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3747,6 +3764,7 @@ GameObject:
   - component: {fileID: 1220964252}
   - component: {fileID: 1220964251}
   - component: {fileID: 1220964254}
+  - component: {fileID: 1220964255}
   m_Layer: 9
   m_Name: Enemy1
   m_TagString: Untagged
@@ -3849,6 +3867,22 @@ MonoBehaviour:
   projectileSpeed: 50
   walkSpeed: 10
   fireRate: 2
+--- !u!54 &1220964255
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220964249}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1252565689
 GameObject:
   m_ObjectHideFlags: 0
@@ -5409,6 +5443,7 @@ GameObject:
   - component: {fileID: 1872116565}
   - component: {fileID: 1872116564}
   - component: {fileID: 1872116567}
+  - component: {fileID: 1872116568}
   m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
@@ -5424,7 +5459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872116562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -221.19, y: 1.72, z: 13.67}
+  m_LocalPosition: {x: -223.03, y: 1.72, z: 13.67}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 1736269280}
@@ -5511,6 +5546,22 @@ MonoBehaviour:
   projectileSpeed: 100
   walkSpeed: 10
   fireRate: 2
+--- !u!54 &1872116568
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872116562}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1886224527
 GameObject:
   m_ObjectHideFlags: 0
