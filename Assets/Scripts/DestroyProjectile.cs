@@ -14,6 +14,7 @@ public class DestroyProjectile : MonoBehaviour
     void Start()
     {
         timeInstantiated = Time.time;
+        Physics.IgnoreLayerCollision(8, 8);
     }
 
     // Update is called once per frame
@@ -25,7 +26,10 @@ public class DestroyProjectile : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision other) {
-        collisions++;
+        if (other.gameObject.tag != "Projectile" && other.gameObject.tag != "EnemyProjectile")
+        {
+            collisions++;
+        } 
     }
 
     void ProjectileDestroyer() {

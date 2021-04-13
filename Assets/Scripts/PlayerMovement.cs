@@ -81,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemyProjectile"))
         {
-            print("here");
             playerHealth.TakeDamage(10);
         }
     }

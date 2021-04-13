@@ -71,4 +71,12 @@ public class Enemy : MonoBehaviour
 
         projectile.transform.SetParent(GameObject.FindGameObjectWithTag("ProjectileParent").transform);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            TakeDamage(20);
+        }
+    }
 }
