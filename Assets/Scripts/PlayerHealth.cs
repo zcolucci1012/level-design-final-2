@@ -13,8 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public AudioClip loseSound;
     public bool isPlayerDead;
 
-    int ticks = 0;
-
+    private float time = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,17 +24,23 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+    public void Update()
+    {
+        time += Time.deltaTime;
+        if (time > 2)
+        {
+            time = 0;
+            TakeDamage(-1);
+        }
+    }
+
     public void TakeDamage(int damageAmount)
     {
-        if (currentHealth > 0)
-        {
-            currentHealth -= damageAmount;
-            healthSlider.value = currentHealth;
-        }
+        currentHealth -= damageAmount;
+        healthSlider.value = currentHealth;
 
         if (currentHealth <= 0 && !isPlayerDead)
         {
-            healthSlider.value = currentHealth;
             PlayerDies();
         }
     }

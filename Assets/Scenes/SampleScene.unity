@@ -1830,7 +1830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  gravity: 200
+  gravity: 18
   jumpHeight: 4
   airControl: 10
   jumpSFX: {fileID: 0}
@@ -2725,7 +2725,7 @@ GameObject:
   - component: {fileID: 851830679}
   m_Layer: 0
   m_Name: ProjectileCollector
-  m_TagString: Untagged
+  m_TagString: ProjectileParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

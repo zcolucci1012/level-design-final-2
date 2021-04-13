@@ -31,7 +31,7 @@ public class ShootProjectile : MonoBehaviour
             
             rb.AddForce(transform.forward * projectileSpeed, ForceMode.VelocityChange);
 
-            projectile.transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform);
+            projectile.transform.SetParent(GameObject.FindGameObjectWithTag("ProjectileParent").transform);
 
             //AudioSource.PlayClipAtPoint(shootSFX,
             //GameObject.FindGameObjectWithTag("MainCamera").transform.position, 0.2f);

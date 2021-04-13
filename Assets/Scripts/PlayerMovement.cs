@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public float airControl = 10f;
     public AudioClip jumpSFX;
 
+    private bool jumping = false;
+    private bool canDoubleJump = false;
+    int jumps = 0;
+
     //private LevelManager levelManager;
     public PlayerHealth playerHealth;
 
@@ -24,29 +28,49 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
+        float moveVertical = Input.GetAxis("Vertical");
 
-            var input = transform.right * moveHorizontal + transform.forward * moveVertical;
-            input *= speed;
+        var input = transform.right * moveHorizontal + transform.forward * moveVertical;
+        input *= speed;
 
-            if (controller.isGrounded)
+        if (controller.isGrounded)
+        {
+            jumps = 0;
+            moveDirection = input;
+
+            if (Input.GetButton("Jump"))
             {
-                moveDirection = input;
-                if (Input.GetButton("Jump"))
-                {
-                    moveDirection.y = Mathf.Sqrt(2 * gravity * jumpHeight);
-                     //AudioSource.PlayClipAtPoint(jumpSFX, GameObject.FindGameObjectWithTag("MainCamera").transform.position, 0.5f);
-                }
-            }
-            else
+                jumping = true;
+                moveDirection.y = Mathf.Sqrt(2 * gravity * jumpHeight);
+                    //AudioSource.PlayClipAtPoint(jumpSFX, GameObject.FindGameObjectWithTag("MainCamera").transform.position, 0.5f);
+            } else
             {
-                // the object is in the air
-                input.y = moveDirection.y;
-                moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
+                jumping = false;
+                canDoubleJump = false;
             }
+        }
+        else
+        {
+            if (!Input.GetButton("Jump") && jumping)
+            {
+                canDoubleJump = true;
+            }
+            else if (jumping && canDoubleJump && jumps < 1)
+            {
+                moveDirection.y = Mathf.Sqrt(gravity * jumpHeight);
+                moveDirection.x *= 10;
+                moveDirection.z *= 10;
+                jumps++;
+                canDoubleJump = false;
+                jumping = false;
+            }
+            // the object is in the air
+            input.y = moveDirection.y;
+            moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
+        }
 
-            moveDirection.y -= gravity * Time.deltaTime;
-            controller.Move(moveDirection * Time.deltaTime);
+        moveDirection.y -= gravity * Time.deltaTime;
+        controller.Move(moveDirection * Time.deltaTime);
         /*if (!playerHealth.isPlayerDead)
         {
             
