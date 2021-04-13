@@ -1834,7 +1834,7 @@ MonoBehaviour:
   jumpHeight: 4
   airControl: 10
   jumpSFX: {fileID: 0}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 341946856}
 --- !u!143 &341946858
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1923,14 +1923,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341946855}
-  m_LocalRotation: {x: -0, y: -0.70512336, z: -0, w: 0.70908475}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 11.17, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: -89.679, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &364367237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,6 +2535,7 @@ GameObject:
   - component: {fileID: 723252658}
   - component: {fileID: 723252657}
   - component: {fileID: 723252656}
+  - component: {fileID: 723252659}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -2619,6 +2620,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723252654}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &723252659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723252654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3b8672361d02b408094d43787aca00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 50
+  currentHealth: 0
+  projectilePrefab: {fileID: 5118211122153280325, guid: 7c61a2cf393ace742936ca3794be2337, type: 3}
+  projectileSpeed: 50
+  fireRate: 2
 --- !u!1 &835172599
 GameObject:
   m_ObjectHideFlags: 0
