@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         int damping = 4;
         var lookPos = player.transform.position - this.transform.position;
         var abovePlayerHead = lookPos;
-        abovePlayerHead.y += 2;
+        abovePlayerHead.y += 1;
         this.playerDirection = abovePlayerHead / abovePlayerHead.magnitude;
         lookPos.y = 0;
         var rotation = Quaternion.LookRotation(lookPos);
