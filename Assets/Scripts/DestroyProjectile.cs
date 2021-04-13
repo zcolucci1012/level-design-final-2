@@ -15,6 +15,8 @@ public class DestroyProjectile : MonoBehaviour
     {
         timeInstantiated = Time.time;
         Physics.IgnoreLayerCollision(8, 8);
+        Physics.IgnoreLayerCollision(8, 10);
+        Physics.IgnoreLayerCollision(9, 10);
     }
 
     // Update is called once per frame

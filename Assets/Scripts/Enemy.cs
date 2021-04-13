@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject projectilePrefab;
     private GameObject player;
     public float projectileSpeed = 50f;
+    public float walkSpeed = 3f;
     public float fireRate = 2;
     private float fireTime = 0;
     private Vector3 playerDirection;
@@ -53,12 +54,22 @@ public class Enemy : MonoBehaviour
             Shoot();
             fireTime = 0;
         }
+
+        RaycastHit hit;
+
+        var mask = ~(1 << 11);
+        var adjusted = (abovePlayerHead - new Vector3(0, 1, 0));
+        var direction = adjusted / adjusted.magnitude;
+        if (!Physics.Raycast(transform.position, direction, out hit, abovePlayerHead.magnitude, mask))
+        {
+            Move();
+        }
     }
 
     void Shoot()
     {
         GameObject projectile = Instantiate(projectilePrefab,
-                transform.position + transform.forward, transform.rotation) as GameObject;
+                transform.position + transform.forward + transform.up / 2, transform.rotation) as GameObject;
 
         if (!projectile.GetComponent<Rigidbody>())
         {
@@ -70,6 +81,14 @@ public class Enemy : MonoBehaviour
         rb.AddForce(playerDirection * projectileSpeed, ForceMode.VelocityChange);
 
         projectile.transform.SetParent(GameObject.FindGameObjectWithTag("ProjectileParent").transform);
+    }
+
+    protected virtual void Move()
+    {
+        var direction = new Vector3(this.playerDirection.x,
+            0,
+            this.playerDirection.z);
+        transform.position += this.playerDirection * Time.deltaTime * walkSpeed;
     }
 
     private void OnCollisionEnter(Collision collision)

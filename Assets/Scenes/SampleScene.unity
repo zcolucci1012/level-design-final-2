@@ -420,7 +420,8 @@ GameObject:
   - component: {fileID: 41802412}
   - component: {fileID: 41802411}
   - component: {fileID: 41802410}
-  m_Layer: 0
+  - component: {fileID: 41802413}
+  m_Layer: 9
   m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,6 +505,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41802408}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &41802413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41802408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3b8672361d02b408094d43787aca00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 50
+  currentHealth: 0
+  projectilePrefab: {fileID: 5118211122153280325, guid: 7c61a2cf393ace742936ca3794be2337, type: 3}
+  projectileSpeed: 50
+  walkSpeed: 10
+  fireRate: 2
 --- !u!1 &46630586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1811,7 @@ GameObject:
   - component: {fileID: 341946858}
   - component: {fileID: 341946857}
   - component: {fileID: 341946856}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2536,7 +2555,8 @@ GameObject:
   - component: {fileID: 723252657}
   - component: {fileID: 723252656}
   - component: {fileID: 723252659}
-  m_Layer: 0
+  - component: {fileID: 723252660}
+  m_Layer: 9
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2636,7 +2656,24 @@ MonoBehaviour:
   currentHealth: 0
   projectilePrefab: {fileID: 5118211122153280325, guid: 7c61a2cf393ace742936ca3794be2337, type: 3}
   projectileSpeed: 50
+  walkSpeed: 5
   fireRate: 2
+--- !u!54 &723252660
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723252654}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &835172599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2906,7 +2943,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -3189,7 +3226,9 @@ GameObject:
   - component: {fileID: 1092257673}
   - component: {fileID: 1092257672}
   - component: {fileID: 1092257671}
-  m_Layer: 0
+  - component: {fileID: 1092257674}
+  - component: {fileID: 1092257675}
+  m_Layer: 9
   m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3273,6 +3312,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092257669}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1092257674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092257669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3b8672361d02b408094d43787aca00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 50
+  currentHealth: 0
+  projectilePrefab: {fileID: 5118211122153280325, guid: 7c61a2cf393ace742936ca3794be2337, type: 3}
+  projectileSpeed: 50
+  walkSpeed: 5
+  fireRate: 2
+--- !u!54 &1092257675
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092257669}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &1111676074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,7 +3746,8 @@ GameObject:
   - component: {fileID: 1220964253}
   - component: {fileID: 1220964252}
   - component: {fileID: 1220964251}
-  m_Layer: 0
+  - component: {fileID: 1220964254}
+  m_Layer: 9
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3757,6 +3831,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220964249}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1220964254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220964249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa3b8672361d02b408094d43787aca00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 50
+  currentHealth: 0
+  projectilePrefab: {fileID: 5118211122153280325, guid: 7c61a2cf393ace742936ca3794be2337, type: 3}
+  projectileSpeed: 50
+  walkSpeed: 10
+  fireRate: 2
 --- !u!1 &1252565689
 GameObject:
   m_ObjectHideFlags: 0
@@ -5316,7 +5408,8 @@ GameObject:
   - component: {fileID: 1872116566}
   - component: {fileID: 1872116565}
   - component: {fileID: 1872116564}
-  m_Layer: 0
+  - component: {fileID: 1872116567}
+  m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5331,7 +5424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872116562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -222.56, y: 1.72, z: 13.67}
+  m_LocalPosition: {x: -221.19, y: 1.72, z: 13.67}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 1736269280}
@@ -5400,6 +5493,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872116562}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1872116567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872116562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7b6b3d3f1144741a277da07454c241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 500
+  currentHealth: 0
+  projectilePrefab: {fileID: 5118211122153280325, guid: 991b1184f6d1fc04e841db1d64f4dfd8, type: 3}
+  projectileSpeed: 100
+  walkSpeed: 10
+  fireRate: 2
 --- !u!1 &1886224527
 GameObject:
   m_ObjectHideFlags: 0
