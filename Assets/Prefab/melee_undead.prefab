@@ -681,7 +681,7 @@ MonoBehaviour:
   currentHealth: 0
   projectilePrefab: {fileID: 5118211122153280325, guid: 7c61a2cf393ace742936ca3794be2337, type: 3}
   projectileSpeed: 50
-  walkSpeed: 3
+  walkSpeed: 5
   fireRate: 2
 --- !u!54 &4980003917571091543
 Rigidbody:
