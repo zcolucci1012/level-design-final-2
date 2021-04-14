@@ -57,19 +57,22 @@ public class Enemy : MonoBehaviour
 
         RaycastHit hit;
 
-        var mask = ~(1 << 11);
+        var mask = ~LayerMask.GetMask("Player", "Enemy");
         var adjusted = (abovePlayerHead - new Vector3(0, 1, 0));
         var direction = adjusted / adjusted.magnitude;
         if (!Physics.Raycast(transform.position, direction, out hit, abovePlayerHead.magnitude, mask))
         {
             Move();
+        } else
+        {
+            print(hit.collider.name);
         }
     }
 
     void Shoot()
     {
         GameObject projectile = Instantiate(projectilePrefab,
-                transform.position + transform.forward + transform.up / 2, transform.rotation) as GameObject;
+                transform.position + transform.forward + transform.up * 2, transform.rotation) as GameObject;
 
         if (!projectile.GetComponent<Rigidbody>())
         {
