@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
 
     //private LevelManager levelManager;
     public PlayerHealth playerHealth;
-    public UIController ui;
 
 
     void Start()
@@ -80,29 +79,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.collider.name);
         if (collision.gameObject.CompareTag("EnemyProjectile"))
         {
             playerHealth.TakeDamage(30);
-        }
-        
-    }
-
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        print(hit.collider.name);
-        if (hit.gameObject.name == "Hole")
-        {
-            hit.gameObject.GetComponent<EnterPortal>().Enter();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.name == "InBossRoom")
-        {
-            ui.UpdateObjective("OBJECTIVE: Defeat The Gatekeeper.");
-            ui.ShowBossHealth(true);
         }
     }
 }
