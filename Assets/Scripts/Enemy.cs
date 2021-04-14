@@ -30,17 +30,17 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void EnemyDies()
+    protected virtual void EnemyDies()
     {
         player.GetComponent<PlayerHealth>().TakeDamage(-10);
         Destroy(this.gameObject);
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         int damping = 4;
-        var lookPos = player.transform.position - this.transform.position;
+        var lookPos = player.transform.position - (this.transform.position + this.transform.up * 4);
         var abovePlayerHead = lookPos;
         abovePlayerHead.y += 1;
         this.playerDirection = abovePlayerHead / abovePlayerHead.magnitude;
@@ -58,21 +58,19 @@ public class Enemy : MonoBehaviour
         RaycastHit hit;
 
         var mask = ~LayerMask.GetMask("Player", "Enemy");
-        var adjusted = (abovePlayerHead - new Vector3(0, 1, 0));
+        var adjusted = (abovePlayerHead - new Vector3(0, 1.5f, 0));
         var direction = adjusted / adjusted.magnitude;
-        if (!Physics.Raycast(transform.position, direction, out hit, abovePlayerHead.magnitude, mask))
+        if (!Physics.Raycast((this.transform.position + this.transform.up * 4),
+            direction, out hit, abovePlayerHead.magnitude, mask))
         {
             Move();
-        } else
-        {
-            print(hit.collider.name);
         }
     }
 
     void Shoot()
     {
         GameObject projectile = Instantiate(projectilePrefab,
-                transform.position + transform.forward + transform.up * 2, transform.rotation) as GameObject;
+                transform.position + transform.forward + transform.up * 4, transform.rotation) as GameObject;
 
         if (!projectile.GetComponent<Rigidbody>())
         {
